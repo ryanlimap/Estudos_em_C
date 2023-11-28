@@ -16,7 +16,7 @@ typedef struct PILHA
 }PILHA;
 
 //Funcao para inicializar a pilha
-void inicializaPilha(PILHA *p)
+void inicializaPilha(PILHA *p) //inicializa a pilha com os campos em NULL para não dar erro
 {
     p->topo = NULL;
 }
@@ -24,16 +24,16 @@ void inicializaPilha(PILHA *p)
 //Funcao para empilhar os dados
 void empilhar(int dado, PILHA *p)
 {
-    NO *ptr = (PILHA*)malloc(sizeof(PILHA));
+    NO *ptr = (PILHA*)malloc(sizeof(PILHA)); //Aloca espaço dinamicamente para um no ptr 
     if(ptr == NULL)
     {
-        printf("Erro de alocação");
+        printf("Erro de alocação"); //se esse no ptr estiver como NULL da erro de alocacao
     }
     else
     {
-        ptr->dado = dado;
-        ptr->prox = p->topo;
-        p->topo = ptr;
+        ptr->dado = dado; //ptr dado recebe o dado da funcao
+        ptr->prox = p->topo; //ptr prox recebe para o topo da pilha
+        p->topo = ptr; //topo da pilha recebe o ptr
     }
 }
 
