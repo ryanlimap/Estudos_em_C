@@ -77,3 +77,5 @@ int main(){
     }
 }
 
+//Funcao push empilha
+//Funca pop desempilha
