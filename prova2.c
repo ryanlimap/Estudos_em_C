@@ -1,6 +1,6 @@
 //Cria uma fila e inicializa os campos
 Queue create() {
-    Queue novafila = (Queue*)malloc(sizeof(Queue));
+    Queue *novafila = (Queue*)malloc(sizeof(Queue));
 
     novafila->front = NULL;
     novafila->rear = NULL;
@@ -22,7 +22,7 @@ int next_task(Queue *task_queue) {
 
 //recebe uma fila e uma descrição de tarefa como parâmetros, e insere a tarefa no final da fila. 
 void add_task(Queue *task_queue, const char* desc) {
-    QueueNode novatarefa = (QueueNode)malloc(sizeof(QueueNode));
+    QueueNode* novatarefa = (QueueNode*)malloc(sizeof(QueueNode));
     novatarefa->next = NULL;
     novatarefa->task = (Task*)malloc(sizeof(Task));
     strcpy(novatarefa->task->desc, desc);
